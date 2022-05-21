@@ -17,10 +17,16 @@ describe('Test for ExplorerService', () => {
             expect(explorer.mission).toBe("node")
         });
     });
-
+    
     test('Get amount of users who are on a specific mission', () => {
-        const explorers = Reader.readJsonFile('explorers.json')
-        const explorersInNodeToGetUsernames = ExplorerService.getAmountOfExplorersByMission(explorers, "node")
-        expect(explorersInNodeToGetUsernames).toBe(10);
+      const explorers = Reader.readJsonFile('explorers.json')
+      const explorersInNodeToGetUsernames = ExplorerService.getAmountOfExplorersByMission(explorers, "node")
+      expect(explorersInNodeToGetUsernames).toBe(10);
+    });
+
+    test('Get username who are on a specific mission', () => {
+      const explorers = Reader.readJsonFile('explorers.json')
+      const usernamesInNode = ExplorerService.getExplorersUsernamesByMission(explorers, "node")
+      expect(usernamesInNode).toContain('ajolonauta12')
     });
 })
