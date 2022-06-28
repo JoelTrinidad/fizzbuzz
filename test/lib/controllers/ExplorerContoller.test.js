@@ -17,7 +17,7 @@ describe("Test for ExplorerController", () => {
     });
 
     test("Get amount of users who are on a specific mission", () => {
-        const amountExplorersInNode = ExplorerController.getAmountOfExplorersByMission("node");
+        const amountExplorersInNode = ExplorerController.getExplorersAmonutByMission("node");
         expect(amountExplorersInNode).toBe(10);
     });
 });
