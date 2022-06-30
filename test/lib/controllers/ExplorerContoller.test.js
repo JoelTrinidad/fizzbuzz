@@ -20,4 +20,11 @@ describe("Test for ExplorerController", () => {
         const amountExplorersInNode = ExplorerController.getExplorersAmonutByMission("node");
         expect(amountExplorersInNode).toBe(10);
     });
+
+    test("Get trick value", () => {
+        expect(ExplorerController.getTrickValue(3)).toBe("FIZZ");
+        expect(ExplorerController.getTrickValue(5)).toBe("BUZZ");
+        expect(ExplorerController.getTrickValue(15)).toBe("FIZZBUZZ");
+        expect(ExplorerController.getTrickValue(7)).toBe(7);
+    });
 });
