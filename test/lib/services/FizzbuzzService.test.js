@@ -13,4 +13,20 @@ describe("Test for FizzbuzzService", () => {
         expect(FizzbuzzService.applyValidationInExplorer(explorer5)).toStrictEqual({name: "Explorer5", score: 5, trick: "BUZZ"});
         expect(FizzbuzzService.applyValidationInExplorer(explorer15)).toStrictEqual({name: "Explorer15", score: 15, trick: "FIZZBUZZ"});
     });
+    
+    test("applyValidationInNumber function return FIZZ", () => {
+        expect(FizzbuzzService.applyValidationInNumber(3)).toBe("FIZZ");
+    });
+    
+    test("applyValidationInNumber function return BUZZ", () => {
+        expect(FizzbuzzService.applyValidationInNumber(5)).toBe("BUZZ");
+    });
+    
+    test("applyValidationInNumber function return FIZZBUZZ", () => {
+        expect(FizzbuzzService.applyValidationInNumber(15)).toBe("FIZZBUZZ");
+    });
+    
+    test("applyValidationInNumber function return a the number given", () => {
+        expect(FizzbuzzService.applyValidationInNumber(2)).toBe(2);
+    });
 });
