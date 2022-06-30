@@ -29,4 +29,19 @@ describe("Test for ExplorerService", () => {
         const usernamesInNode = ExplorerService.getExplorersUsernamesByMission(explorers, "node");
         expect(usernamesInNode).toContain("ajolonauta12");
     });
+
+    test("Get explorers who have a specific stack", () => {
+        const explorers = Reader.readJsonFile("explorers.json");
+        const explorersWithStack = ExplorerService.getExplorersByStack(explorers, "reasonML");
+        
+        expect(explorersWithStack).toEqual(
+            expect.arrayContaining([
+                expect.objectContaining({  stacks: expect.arrayContaining(['reasonML']) }),
+            ])
+        );
+        explorersWithStack.forEach(explorer => {
+            expect(explorer.stacks).toContain('reasonML');
+        });
+    });
+
 });
