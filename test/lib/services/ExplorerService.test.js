@@ -36,11 +36,11 @@ describe("Test for ExplorerService", () => {
         
         expect(explorersWithStack).toEqual(
             expect.arrayContaining([
-                expect.objectContaining({  stacks: expect.arrayContaining(['reasonML']) }),
+                expect.objectContaining({  stacks: expect.arrayContaining(["reasonML"]) }),
             ])
         );
         explorersWithStack.forEach(explorer => {
-            expect(explorer.stacks).toContain('reasonML');
+            expect(explorer.stacks).toContain("reasonML");
         });
     });
 
