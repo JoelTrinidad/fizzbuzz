@@ -27,4 +27,12 @@ describe("Test for ExplorerController", () => {
         expect(ExplorerController.getTrickValue(15)).toBe("FIZZBUZZ");
         expect(ExplorerController.getTrickValue(7)).toBe(7);
     });
+
+    test("Get all users who have a specific stack", () => {
+        const explorers = ExplorerController.getExplorersByStack("reasonML");
+        
+        explorers.forEach(explorer => {
+            expect(explorer.stacks).toContain("reasonML");
+        });
+    });
 });
