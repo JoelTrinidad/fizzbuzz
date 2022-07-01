@@ -32,7 +32,7 @@ describe("Test for ExplorerService", () => {
 
     test("Get explorers who have a specific stack", () => {
         const explorers = Reader.readJsonFile("explorers.json");
-        const explorersWithStack = ExplorerService.getExplorersByStack(explorers, "reasonML");
+        const explorersWithStack = ExplorerService.filterByStack(explorers, "reasonML");
         
         expect(explorersWithStack).toEqual(
             expect.arrayContaining([
