@@ -30,4 +30,13 @@ describe("Test for server", () => {
         expect(response.status).toBe(200);
         expect(response.body).toStrictEqual({score: "3", trick: "FIZZ"})
     });
+
+    test("test for explorers with stack endpoint",  async () => {
+        const response = await request.get('/v1/explorers/stack/javascript');
+        const explorers = response.body;
+        expect(response.status).toBe(200);
+        explorers.forEach(explorer => {
+            expect(explorer.stacks).toContain("javascript");
+        });
+    });
 });
